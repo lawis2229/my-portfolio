@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  ElementType,
+  type ElementType,
   useEffect,
   useRef,
   useState,
@@ -73,10 +73,11 @@ const TextType = ({
   }, [variableSpeed, typingSpeed]);
 
   const getCurrentTextColor = () => {
-    if (textColors.length === 0) return "#00000";
+    if (textColors.length === 0) return "#000000";
     return textColors[currentTextIndex % textColors.length];
   };
 
+  // Handle visibility start (when using IntersectionObserver)
   useEffect(() => {
     if (!startOnVisible || !containerRef.current) return;
 
@@ -95,6 +96,7 @@ const TextType = ({
     return () => observer.disconnect();
   }, [startOnVisible]);
 
+  // Cursor blinking animation
   useEffect(() => {
     if (showCursor && cursorRef.current) {
       gsap.set(cursorRef.current, { opacity: 1 });
@@ -108,6 +110,7 @@ const TextType = ({
     }
   }, [showCursor, cursorBlinkDuration]);
 
+  // Typing and deleting effect
   useEffect(() => {
     if (!isVisible) return;
 
@@ -122,9 +125,7 @@ const TextType = ({
       if (isDeleting) {
         if (displayedText === "") {
           setIsDeleting(false);
-          if (currentTextIndex === textArray.length - 1 && !loop) {
-            return;
-          }
+          if (currentTextIndex === textArray.length - 1 && !loop) return;
 
           if (onSentenceComplete) {
             onSentenceComplete(textArray[currentTextIndex], currentTextIndex);
@@ -178,6 +179,7 @@ const TextType = ({
     isVisible,
     reverseMode,
     variableSpeed,
+    getRandomSpeed,
     onSentenceComplete,
   ]);
 
