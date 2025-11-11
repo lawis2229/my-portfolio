@@ -2,13 +2,13 @@ import { Button } from "@/components/ui/button";
 
 const Resume = () => {
   return (
-    <div className="py-20">
-      <div>
+    <div className="py-5">
+      <div className="flex justify-end">
         <a href="/Mark_Lawis_CV.pdf" download>
           <Button size="sm">Download CV</Button>
         </a>
       </div>
-      <div className="w-full justify-items-center mt-8">
+      <div className="flex w-full justify-center py-4">
         <div className="w-[60%]">
           <img
             src="/Mark_Lawis_CV.jpg"

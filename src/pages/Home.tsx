@@ -5,17 +5,18 @@ import TextType from "@/components/TextType";
 const Home = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between w-full mt-10 md:mt-20 gap-8">
-        <div className="flex justify-center md:justify-center w-full md:w-[500px] card border-8">
+      <div className="flex md:flex-row items-center justify-center md:justify-between h-full gap-8">
+        <div className="flex justify-center md:justify-center w-full md:w-[500px]">
           <img
-            className="h-[300px] md:h-[500px] object-contain bg-white rounded-lg"
+            className="h-[300px] md:h-[648px] object-contain rounded-lg mix-blend-multiply dark:mix-blend-normal"
             src="/profile_pic.png"
             alt="my_profile_pic"
+            onContextMenu={(e) => e.preventDefault()}
           />
         </div>
 
-        <div className="flex-1 justify-center items-center md:w-3/4 text-center md:text-center card border-8">
-          <h1 className="font-bold text-2xl md:text-5xl mb-3">
+        <div className="flex-1 justify-center items-center md:w-3/4 text-center md:text-center">
+          <h1 className="font-bold text-2xl md:text-6xl mb-3">
             Hi! I'm Mark Laurence G. Lawis
           </h1>
           <p className="text-xl">
