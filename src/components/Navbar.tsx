@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { navItems } from "@/config/navItems";
+import { useState } from "react";
 
 function Navbar() {
   const { pathname } = useLocation();
@@ -14,20 +14,18 @@ function Navbar() {
         {navItems.map((nav) => {
           const active = pathname === nav.to;
           return (
-            <>
-              <Link
-                key={nav.title}
-                to={nav.to}
-                className={`relative flex items-center gap-1 transition-all after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary hover:after:scale-x-100 ${
-                  active
-                    ? "text-primary font-semibold after:scale-x-100"
-                    : "text-neutral hover:text-primary"
-                }`}
-              >
-                {nav.icon}
-                {nav.title}
-              </Link>
-            </>
+            <Link
+              key={nav.title}
+              to={nav.to}
+              className={`relative flex items-center gap-1 transition-all after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary hover:after:scale-x-100 ${
+                active
+                  ? "text-primary font-semibold after:scale-x-100"
+                  : "text-neutral hover:text-primary"
+              }`}
+            >
+              {nav.icon}
+              {nav.title}
+            </Link>
           );
         })}
         <ModeToggle />
