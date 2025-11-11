@@ -1,12 +1,5 @@
 import CircularGallery from "@/components/CircularGallery";
 
-// const techLogos = [
-//   "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1969px-Laravel.svg.png",
-//   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
-//   "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png",
-//   "https://blog.nashtechglobal.com/wp-content/uploads/2025/07/ee358d91675104492e67ab441cb3898b.png",
-// ];
-
 const About = () => {
   return (
     <>
