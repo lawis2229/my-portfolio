@@ -7,7 +7,7 @@ export const navItems = [
     to: "/home",
   },
   {
-    title: "About",
+    title: "About Me",
     icon: <Info className="text-neutral" />,
     to: "/about",
   },
