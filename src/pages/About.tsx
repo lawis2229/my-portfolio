@@ -4,14 +4,6 @@ import { DiMysql } from "react-icons/di";
 import { FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui } from "react-icons/si";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { FocusCards } from "@/components/ui/focus-cards";
 
