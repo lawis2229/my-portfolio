@@ -10,7 +10,7 @@ const App = () => {
         </h1>
         <Navbar />
       </div>
-      <div className="flex flex-1 justify-center py-14">
+      <div className="flex flex-1 justify-center pt-14">
         <div className="w-[90%]">
           <Outlet />
         </div>

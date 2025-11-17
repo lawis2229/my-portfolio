@@ -549,10 +549,6 @@ class App {
         text: "",
       },
       {
-        image: `/my_images/9.jpg`,
-        text: "",
-      },
-      {
         image: `/my_images/10.jpg`,
         text: "",
       },

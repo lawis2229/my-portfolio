@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -102,6 +104,8 @@
   --sidebar-border: oklch(0.9276 0.0058 264.5313);
   --sidebar-ring: oklch(0.6397 0.172 36.4421);
   --destructive-foreground: oklch(1 0 0);
+  --font-sans: "Inter", "Montserrat", ui-sans-serif, system-ui;
+
   /* --font-sans: Roboto Flex, ui-sans-serif, sans-serif, system-ui;
   --font-serif: Roboto Flex, ui-sans-serif, sans-serif, system-ui;
   --font-mono: Roboto Flex, ui-sans-serif, sans-serif, system-ui; */
@@ -164,6 +168,7 @@
   --sidebar-ring: oklch(0.6397 0.172 36.4421);
   --destructive-foreground: oklch(1 0 0);
   --radius: 0.75rem;
+  --font-sans: "Inter", "Montserrat", ui-sans-serif, system-ui;
   /* --font-sans: Roboto Flex, ui-sans-serif, sans-serif, system-ui;
   --font-serif: Roboto Flex, ui-sans-serif, sans-serif, system-ui;
   --font-mono: Roboto Flex, ui-sans-serif, sans-serif, system-ui; */

@@ -14,6 +14,7 @@ const Resume = () => {
             src="/Mark_Lawis_CV.jpg"
             alt="My_Resume"
             onContextMenu={(e) => e.preventDefault()}
+            className="shadow-2xl rounded-lg"
           />
         </div>
       </div>
