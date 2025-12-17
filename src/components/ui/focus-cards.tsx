@@ -5,9 +5,7 @@ import { cn } from "@/lib/utils";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
-  DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
@@ -57,7 +55,6 @@ type Card = {
   title: string;
   src: string;
   video: string;
-  description: string;
 };
 
 export function FocusCards({ cards }: { cards: Card[] }) {
@@ -87,7 +84,6 @@ export function FocusCards({ cards }: { cards: Card[] }) {
             </video>
             <DialogFooter>
               <DialogTitle>{card.title}</DialogTitle>
-              <DialogDescription>{card.description}</DialogDescription>
             </DialogFooter>
           </DialogContent>
         </Dialog>
