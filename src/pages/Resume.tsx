@@ -1,3 +1,4 @@
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Button } from "@/components/ui/button";
 
 const Resume = () => {
@@ -10,12 +11,14 @@ const Resume = () => {
       </div>
       <div className="flex w-full justify-center py-4">
         <div className="w-[60%]">
-          <img
-            src="/Mark_Lawis_CV.jpg"
-            alt="My_Resume"
-            onContextMenu={(e) => e.preventDefault()}
-            className="shadow-2xl rounded-lg"
-          />
+          <BackgroundGradient>
+            <img
+              src="/Mark_Lawis_CV.jpg"
+              alt="My_Resume"
+              onContextMenu={(e) => e.preventDefault()}
+              className="shadow-2xl rounded-lg"
+            />
+          </BackgroundGradient>
         </div>
       </div>
     </div>

@@ -2,6 +2,15 @@
 
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export const Card = React.memo(
   ({
@@ -26,7 +35,7 @@ export const Card = React.memo(
       <img
         src={card.src}
         alt={card.title}
-        className="object-cover absolute inset-0"
+        className="object-cover absolute inset-0 w-full h-full bg-white"
       />
       <div
         className={cn(
@@ -47,21 +56,41 @@ Card.displayName = "Card";
 type Card = {
   title: string;
   src: string;
+  video: string;
+  description: string;
 };
 
 export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto md:px-8 w-full py-5">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 max-w-10xl mx-auto md:px-8 w-full py-5">
       {cards.map((card, index) => (
-        <Card
-          key={card.title}
-          card={card}
-          index={index}
-          hovered={hovered}
-          setHovered={setHovered}
-        />
+        <Dialog key={card.title}>
+          <DialogTrigger>
+            <Card
+              card={card}
+              index={index}
+              hovered={hovered}
+              setHovered={setHovered}
+            />
+          </DialogTrigger>
+          <DialogContent className="h-auto w-fit">
+            <video controls autoPlay loop width="900" height="500">
+              <source src={card.video} type="video/webm" />
+              <source src={card.video} type="video/mp4" />
+              Download the
+              <a href="/shared-assets/videos/flower.webm">WEBM</a>
+              or
+              <a href="/shared-assets/videos/flower.mp4">MP4</a>
+              video.
+            </video>
+            <DialogFooter>
+              <DialogTitle>{card.title}</DialogTitle>
+              <DialogDescription>{card.description}</DialogDescription>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       ))}
     </div>
   );

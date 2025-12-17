@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import App from "@/App.tsx";
+import Contact from "@/pages/Contact";
 
 const Home = lazy(() => import("@/pages/Home"));
 const About = lazy(() => import("@/pages/About"));
@@ -16,6 +17,7 @@ const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   );

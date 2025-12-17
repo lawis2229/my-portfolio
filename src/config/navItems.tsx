@@ -1,4 +1,4 @@
-import { FileUser, FolderKanban, Home, Info } from "lucide-react";
+import { FileUser, FolderKanban, Home, Info, Contact } from "lucide-react";
 
 export const navItems = [
   {
@@ -7,7 +7,7 @@ export const navItems = [
     to: "/home",
   },
   {
-    title: "About Me",
+    title: "About",
     icon: <Info className="text-neutral" />,
     to: "/about",
   },
@@ -20,5 +20,11 @@ export const navItems = [
     title: "Resume/CV",
     icon: <FileUser className="text-neutral" />,
     to: "/resume",
+  },
+
+  {
+    title: "Contact",
+    icon: <Contact className="text-neutral" />,
+    to: "/contact",
   },
 ];
