@@ -7,12 +7,59 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { IoIosSend } from "react-icons/io";
+import { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { Spinner } from "@/components/ui/spinner";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/sent-email",
+        form
+      );
+
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent!",
+        text:
+          response.data.message || "Your message has been sent successfully.",
+        confirmButtonText: "OK",
+      });
+
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Failed!",
+        text: "Failed to send message. Please try again.",
+        confirmButtonText: "OK",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="py-8 flex h-full">
-        <div className="w-[50%] h-full overflow-hidden relative bg-secondary">
+        <div className="w-[50%] h-full overflow-hidden relative bg-secondary rounded-l-xl">
           <div className="absolute top-4 w-full h-full left-2">
             <h1 className="text-secondary-foreground font-semibold ml-3.5">
               Contact Me
@@ -86,7 +133,7 @@ const Contact = () => {
           ></iframe>
         </div>
 
-        <div className="w-[50%] flex items-center justify-center bg-secondary">
+        <div className="w-[50%] flex items-center justify-center bg-secondary rounded-r-xl">
           <div className="h-[600px] w-[650px] flex justify-center items-center">
             <div className="flex-col py-7 px-6 w-full">
               <h1 className="text-secondary-foreground font-semibold">
@@ -96,28 +143,65 @@ const Contact = () => {
               <div className="grid grid-cols-2 gap-2 mt-5">
                 <div className="grid w-full max-w-sm items-center gap-3">
                   <Label htmlFor="name">Name*</Label>
-                  <Input type="text" id="name" placeholder="Name" />
+                  <Input
+                    type="text"
+                    placeholder="Name"
+                    id="name"
+                    value={form.name}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="grid w-full max-w-sm items-center gap-3">
                   <Label htmlFor="email">Email*</Label>
-                  <Input type="email" id="email" placeholder="Email" />
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                    value={form.email}
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
 
               <div className="grid w-full items-center gap-3 mt-4">
                 <Label htmlFor="subject">Subject*</Label>
-                <Input type="text" id="subject" placeholder="Subject" />
+                <Input
+                  type="text"
+                  placeholder="Subject"
+                  id="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="grid w-full items-center gap-3 mt-4">
                 <Label htmlFor="message">Message*</Label>
-                <Textarea id="message" className="h-50" placeholder="Message" />
+                <Textarea
+                  className="h-50"
+                  placeholder="Message"
+                  id="message"
+                  value={form.message}
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="flex mt-3 justify-center">
-                <Button variant="outline" size="lg">
-                  <IoIosSend />
-                  Send Message
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-gray-400 dark:bg-gray-400"
+                  onClick={handleSubmit}
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <>
+                      <Spinner /> Sending...
+                    </>
+                  ) : (
+                    <>
+                      <IoIosSend /> Send Message
+                    </>
+                  )}
                 </Button>
               </div>
             </div>

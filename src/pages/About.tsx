@@ -120,11 +120,7 @@ const About = () => {
           </BackgroundGradient>
 
           <BackgroundGradient className="py-8 bg-secondary rounded-xl p-6 shadow-xl">
-            <h5 className="font-semibold">💻 Tech Stack & Tools I Use</h5>
-            <h6 className="text-[15px] py-3 text-justify px-10">
-              The Infinite Scrolling Logos says that those are the Tech Stack I
-              used.
-            </h6>
+            <h5 className="font-semibold">💻 Technologies I Work With</h5>
 
             <div className="py-5">
               <Marquee gradient={false} speed={70} pauseOnHover={true}>

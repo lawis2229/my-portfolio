@@ -3,16 +3,80 @@ import TextType from "@/components/TextType";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-// import DarkVeil from "@/components/DarkVeil";
+import { FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
+import { DiJavascript } from "react-icons/di";
+import { SiShadcnui, SiTypescript } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { SiMysql } from "react-icons/si";
+
+const techStack = [
+  {
+    description: "Laravel",
+    value: "laravel",
+    icon: <FaLaravel />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-orange-600 data-[state=on]:*:[svg]:fill-orange-600",
+  },
+  {
+    description: "React",
+    value: "react",
+    icon: <FaReact />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-blue-400 data-[state=on]:*:[svg]:fill-blue-400",
+  },
+  {
+    description: "Vue JS",
+    value: "vuejs",
+    icon: <FaVuejs />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-green-400 data-[state=on]:*:[svg]:fill-green-400",
+  },
+  {
+    description: "Tailwind CSS",
+    value: "tailwindcss",
+    icon: <RiTailwindCssFill />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-blue-400 data-[state=on]:*:[svg]:fill-blue-400",
+  },
+  {
+    description: "MySQL",
+    value: "mysql",
+    icon: <SiMysql />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-yellow-600 data-[state=on]:*:[svg]:fill-yellow-600",
+  },
+  {
+    description: "Shadcn UI",
+    value: "shadcnui",
+    icon: <SiShadcnui />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-black data-[state=on]:*:[svg]:fill-black",
+  },
+  {
+    description: "Javascript",
+    value: "javascript",
+    icon: <DiJavascript />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-yellow-500 data-[state=on]:*:[svg]:fill-yellow-500",
+  },
+  {
+    description: "Typescript",
+    value: "typescript",
+    icon: <SiTypescript />,
+    classType:
+      "data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-blue-400 data-[state=on]:*:[svg]:fill-blue-400",
+  },
+];
 
 const Home = () => {
   return (
     <>
       <div className="flex justify-center min-h-full gap-10">
         <div className="justify-center items-center flex">
-          <BackgroundGradient className="py-2 px-4 bg-secondary rounded-xl shadow-xl flex relative">
+          <BackgroundGradient className="py-2 px-4 bg-secondary rounded-xl shadow-xl flex relative w-full">
             <div className="absolute-classes">
-              <h1 className="flex absolute right-20 -top-6 text-[#033476] font-bold [text-shadow:_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white,_1px_1px_0_white]">
+              <h1 className="flex absolute right-20 italic tracking-widest -top-6 text-[#033476] font-bold [text-shadow:_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white,_1px_1px_0_white]">
                 Opol Community College
               </h1>
               <img
@@ -30,14 +94,14 @@ const Home = () => {
               onContextMenu={(e) => e.preventDefault()}
             />
             <div className="flex flex-col items-center justify-center pr-4">
-              <h4 className="bg-[#033476] rounded-2xl h-9 w-45 flex justify-center items-center text-white text-shadow-md mb-2">
+              <h4 className="bg-[#033476] tracking-widest rounded-2xl h-9 w-auto px-4 flex justify-center items-center text-white text-shadow-md mb-2">
                 Web Developer
               </h4>
 
-              <h1 className="font-bold text-2xl md:text-6xl mb-3 text-shadow-[#033476] text-shadow-lg">
+              <h1 className="font-bold text-2xl md:text-6xl mb-3 text-shadow-lg italic tracking-wide">
                 Hi, I'm Mark Laurence!
               </h1>
-              <p className="text-xl">
+              <div className="text-xl">
                 <TextType
                   className="text-shadow-[#033476] text-shadow-md"
                   text={[
@@ -49,7 +113,7 @@ const Home = () => {
                   showCursor={true}
                   cursorCharacter="|"
                 />
-              </p>
+              </div>
               <div className="flex gap-1.5 mt-6">
                 <a href="/Mark_Lawis_CV.pdf" download>
                   <Button
@@ -64,6 +128,35 @@ const Home = () => {
                     Contact Me!
                   </Button>
                 </Link>
+              </div>
+
+              <div className="flex flex-col mt-12 w-full items-center">
+                <h3 className="font-bold mb-3 text-shadow-lg flex gap-2 italic tracking-wide">
+                  Technologies I Work With
+                </h3>
+
+                <div className="flex flex-col gap-4">
+                  <ToggleGroup
+                    type="multiple"
+                    variant="outline"
+                    spacing={2}
+                    size="sm"
+                    defaultValue={techStack.map((s) => s.value)}
+                    className="grid grid-cols-3"
+                  >
+                    {techStack.map((stack) => (
+                      <ToggleGroupItem
+                        key={stack.value}
+                        value={stack.value}
+                        aria-label={`Toggle ${stack.value}`}
+                        className={stack.classType}
+                      >
+                        {stack.icon}
+                        {stack.description}
+                      </ToggleGroupItem>
+                    ))}
+                  </ToggleGroup>
+                </div>
               </div>
             </div>
           </BackgroundGradient>
