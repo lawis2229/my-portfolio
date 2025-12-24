@@ -78,10 +78,10 @@ const About = () => {
               👋 From Graduate to Aspiring Web Developer
             </h5>
 
-            <h6 className="text-[15px] py-3 text-justify px-10">
-              Hi! 👋 I'm Mark Laurence Lawis, 26 year's old and dreaming to
-              become a Web Developer someday! 🙏 I graduated a Bachelor's Degree
-              in Information Technology at Opol Community College, Year 2023. 💻
+            <h6 className="text-[15px] py-3 text-justify px-1 sm:px-10">
+              Hi! I'm Mark Laurence Lawis, 26 year's old and dreaming to become
+              a Web Developer someday! I graduated a Bachelor's Degree in
+              Information Technology at Opol Community College, Year 2023. 💻
               I'm the programmer during my Capstone Project using HTML, Laravel
               (Backend) and MySQL, from now on I currently studying Javascript
               Frontend Frameworks and I love doing it especially when combining
@@ -106,7 +106,6 @@ const About = () => {
               time I made it from Web Application only and they successfully
               defended as well. I am here now seeking for an entry job and ready
               to showcase my dedication to becoming a productive Web Developer.
-              😇
             </h6>
 
             <div className="flex h-90">
@@ -143,7 +142,7 @@ const About = () => {
 
           <BackgroundGradient className="py-8 bg-secondary rounded-xl p-6 shadow-xl">
             <h5 className="font-semibold">💯 Hobbies and Interests</h5>
-            <h6 className="text-[15px] py-3 text-justify px-10">
+            <h6 className="text-[15px] py-3 text-justify px-1 sm:px-10">
               You can click the images! 😁
             </h6>
 

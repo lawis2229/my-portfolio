@@ -12,7 +12,7 @@ const App = () => {
             className="p-1 rounded bg-secondary-foreground text-secondary"
           />
           ML
-          <span className="bg-clip-text text-shadow-md text-shadow-primary text-secondary-foreground">
+          <span className="bg-clip-text text-shadow-md text-shadow-primary text-secondary-foreground md:hidden lg:block">
             LAWIS
           </span>
         </h1>

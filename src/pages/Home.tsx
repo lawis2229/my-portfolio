@@ -73,35 +73,23 @@ const Home = () => {
   return (
     <>
       <div className="flex justify-center min-h-full gap-10">
-        <div className="justify-center items-center flex">
-          <BackgroundGradient className="py-2 px-4 bg-secondary rounded-xl shadow-xl flex relative w-full">
-            <div className="absolute-classes">
-              <h1 className="flex absolute right-20 italic tracking-widest -top-6 text-[#033476] font-bold [text-shadow:_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white,_1px_1px_0_white]">
-                Opol Community College
-              </h1>
-              <img
-                className="h-[150px] absolute -right-17 -top-17"
-                src="/logo.png"
-                alt="my_logo"
-                onContextMenu={(e) => e.preventDefault()}
-              />
-            </div>
-
+        <div className="justify-center items-center flex mt-4 sm:mt-0">
+          <BackgroundGradient className="py-2 px-4 bg-secondary rounded-xl shadow-xl w-full flex flex-col md:flex md:flex-row">
             <img
-              className="h-[400px] md:h-[560px] object-contain rounded-lg mix-blend-multiply dark:mix-blend-normal"
+              className="h-[350px] md:h-[400px] lg:h-[560px] object-contain rounded-lg mix-blend-multiply dark:mix-blend-normal"
               src="/graduation_pic.png"
               alt="my_profile_pic"
               onContextMenu={(e) => e.preventDefault()}
             />
             <div className="flex flex-col items-center justify-center pr-4">
-              <h4 className="bg-[#033476] tracking-widest rounded-2xl h-9 w-auto px-4 flex justify-center items-center text-white text-shadow-md mb-2">
+              <label className="bg-[#033476] tracking-widest rounded-2xl h-9 w-auto px-4 flex justify-center items-center text-white text-shadow-md mt-2">
                 Web Developer
-              </h4>
+              </label>
 
-              <h1 className="font-bold text-2xl md:text-6xl mb-3 text-shadow-lg italic tracking-wide">
+              <h3 className="font-bold text-center text-3xl md:text-5xl mb-3 text-shadow-lg italic tracking-wide">
                 Hi, I'm Mark Laurence!
-              </h1>
-              <div className="text-xl">
+              </h3>
+              <div className="text-xl text-justify">
                 <TextType
                   className="text-shadow-[#033476] text-shadow-md"
                   text={[
@@ -130,7 +118,7 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="flex flex-col mt-12 w-full items-center">
+              <div className="flex flex-col mt-4 sm:mt-12 w-full items-center">
                 <h3 className="font-bold mb-3 text-shadow-lg flex gap-2 italic tracking-wide">
                   Technologies I Work With
                 </h3>
@@ -142,7 +130,7 @@ const Home = () => {
                     spacing={2}
                     size="sm"
                     defaultValue={techStack.map((s) => s.value)}
-                    className="grid grid-cols-3"
+                    className="grid grid-cols-2 lg:grid-cols-3"
                   >
                     {techStack.map((stack) => (
                       <ToggleGroupItem

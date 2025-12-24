@@ -29,9 +29,10 @@ const Contact = () => {
   const handleSubmit = async () => {
     setLoading(true);
     // http://127.0.0.1:8000
+    // https://my-portfolio-backend-6f4z.onrender.com
     try {
       const response = await axios.post(
-        "https://my-portfolio-backend-6f4z.onrender.com/api/sent-email",
+        "http://127.0.0.1:8000/api/sent-email",
         form
       );
 
