@@ -71,14 +71,14 @@ const cards = [
 const About = () => {
   return (
     <>
-      <div className="py-8">
-        <div className="flex flex-col gap-10">
-          <BackgroundGradient className="block bg-secondary rounded-xl p-6 shadow-xl">
+      <div className="py-6 sm:py-8">
+        <div className="flex flex-col gap-4 lg:gap-10">
+          <BackgroundGradient className="block bg-secondary rounded-xl py-2 px-4 shadow-xl">
             <h5 className="font-semibold">
               👋 From Graduate to Aspiring Web Developer
             </h5>
 
-            <h6 className="text-[15px] py-3 text-justify px-1 sm:px-10">
+            <h6 className="text-[15px] py-3 text-justify px-0 sm:px-10">
               Hi! I'm Mark Laurence Lawis, 26 year's old and dreaming to become
               a Web Developer someday! I graduated a Bachelor's Degree in
               Information Technology at Opol Community College, Year 2023. 💻

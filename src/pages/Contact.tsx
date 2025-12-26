@@ -59,13 +59,13 @@ const Contact = () => {
 
   return (
     <>
-      <div className="py-8 flex h-full">
-        <div className="w-[50%] h-full overflow-hidden relative bg-secondary rounded-l-xl">
+      <div className="py-8 flex flex-col lg:flex-row h-full">
+        <div className="hidden sm:block w-[50%] h-full overflow-hidden relative bg-secondary rounded-l-xl">
           <div className="absolute top-4 w-full h-full left-2">
             <h1 className="text-secondary-foreground font-semibold ml-3.5">
               Contact Me
             </h1>
-            <div className="grid grid-cols-3 h-[190px] mt-4 gap-1">
+            <div className="grid grid-cols-1 sm:grid-cols-3 h-[190px] mt-4 gap-1">
               <div className="flex-col px-7">
                 <div className="flex font-medium items-center gap-1">
                   <MdEmail size={20} />
@@ -127,21 +127,21 @@ const Contact = () => {
           <iframe
             title="location-map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.391787071424!2d124.568936!3d8.488322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff5a953b141a7:0x7c5320c7f68918b9!2sCitihomes%20Bus%20Station!5e0!3m2!1sen!2sph!4v1700000000000"
-            className="w-full h-[67%] border-0 bottom-2 absolute left-2 rounded-lg"
+            className="hidden sm:block w-full h-[67%] border-0 bottom-2 absolute left-2 rounded-lg"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           ></iframe>
         </div>
 
-        <div className="w-[50%] flex items-center justify-center bg-secondary rounded-r-xl">
+        <div className="w-full sm:w-[50%] flex items-center justify-center bg-secondary rounded-xl sm:rounded-r-xl">
           <div className="h-[600px] w-[650px] flex justify-center items-center">
             <div className="flex-col py-7 px-6 w-full">
               <h1 className="text-secondary-foreground font-semibold">
                 Send Message
               </h1>
 
-              <div className="grid grid-cols-2 gap-2 mt-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-5">
                 <div className="grid w-full max-w-sm items-center gap-3">
                   <Label htmlFor="name">Name*</Label>
                   <Input

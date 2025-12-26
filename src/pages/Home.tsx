@@ -73,7 +73,7 @@ const Home = () => {
   return (
     <>
       <div className="flex justify-center min-h-full gap-10">
-        <div className="justify-center items-center flex mt-4 sm:mt-0">
+        <div className="justify-center items-center flex mt-6 sm:mt-0">
           <BackgroundGradient className="py-2 px-4 bg-secondary rounded-xl shadow-xl w-full flex flex-col md:flex md:flex-row">
             <img
               className="h-[350px] md:h-[400px] lg:h-[560px] object-contain rounded-lg mix-blend-multiply dark:mix-blend-normal"
