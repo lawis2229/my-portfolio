@@ -60,11 +60,11 @@ const Contact = () => {
   return (
     <>
       <div className="py-8 flex flex-col lg:flex-row h-full">
-        <div className="hidden sm:block w-[50%] h-full overflow-hidden relative bg-secondary rounded-l-xl">
+        <div className="hidden sm:block w-[50%] h-full overflow-hidden relative bg-secondary">
           <div className="absolute top-4 w-full h-full left-2">
-            <h1 className="text-secondary-foreground font-semibold ml-3.5">
+            <h3 className="text-secondary-foreground font-semibold ml-3.5">
               Contact Me
-            </h1>
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 h-[190px] mt-4 gap-1">
               <div className="flex-col px-7">
                 <div className="flex font-medium items-center gap-1">
@@ -134,9 +134,9 @@ const Contact = () => {
           ></iframe>
         </div>
 
-        <div className="w-full sm:w-[50%] flex items-center justify-center bg-secondary rounded-xl sm:rounded-r-xl">
+        <div className="w-full sm:w-[50%] flex items-center justify-center bg-secondary">
           <div className="h-[600px] w-[650px] flex justify-center items-center">
-            <div className="flex-col py-7 px-6 w-full">
+            <div className="flex-col py-7 px-2 sm:px-6 w-full">
               <h1 className="text-secondary-foreground font-semibold">
                 Send Message
               </h1>

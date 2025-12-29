@@ -1,11 +1,12 @@
 import CircularGallery from "@/components/CircularGallery";
 import Marquee from "react-fast-marquee";
 import { DiJavascript, DiMysql } from "react-icons/di";
-import { FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
+import { FaArrowRight, FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui, SiTypescript } from "react-icons/si";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { FocusCards } from "@/components/ui/focus-cards";
+import { FaArrowLeft } from "react-icons/fa";
 
 const logos = [
   {
@@ -108,12 +109,20 @@ const About = () => {
               to showcase my dedication to becoming a productive Web Developer.
             </h6>
 
-            <div className="flex h-90">
+            <div className="flex h-80 relative">
               <CircularGallery
                 bend={0}
                 textColor="text-transparent"
                 borderRadius={0.05}
                 scrollEase={0.02}
+              ></CircularGallery>
+              <FaArrowLeft
+                className="absolute top-0 -left-3 lg:-left-15 lg:top-35"
+                size={25}
+              />
+              <FaArrowRight
+                className="absolute top-0 -right-3 lg:-right-15 lg:top-35"
+                size={25}
               />
             </div>
           </BackgroundGradient>

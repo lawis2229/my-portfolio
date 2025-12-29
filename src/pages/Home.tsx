@@ -73,14 +73,17 @@ const Home = () => {
   return (
     <>
       <div className="flex justify-center min-h-full gap-10">
-        <div className="justify-center items-center flex mt-6 sm:mt-0">
+        <div className="justify-center items-center flex mt-6">
           <BackgroundGradient className="py-2 px-4 bg-secondary rounded-xl shadow-xl w-full flex flex-col md:flex md:flex-row">
-            <img
-              className="h-[350px] md:h-[400px] lg:h-[560px] object-contain rounded-lg mix-blend-multiply dark:mix-blend-normal"
-              src="/graduation_pic.png"
-              alt="my_profile_pic"
-              onContextMenu={(e) => e.preventDefault()}
-            />
+            <div className="flex flex-col justify-center items-center">
+              <img
+                className="h-[300px] md:h-[560px] lg:h-[560px] object-contain rounded-lg mix-blend-multiply dark:mix-blend-normal"
+                src="/graduation_pic.png"
+                alt="my_profile_pic"
+                onContextMenu={(e) => e.preventDefault()}
+              />
+            </div>
+
             <div className="flex flex-col items-center justify-center pr-4">
               <label className="bg-[#033476] tracking-widest rounded-2xl h-9 w-auto px-4 flex justify-center items-center text-white text-shadow-md mt-2">
                 Web Developer
@@ -119,9 +122,9 @@ const Home = () => {
               </div>
 
               <div className="flex flex-col mt-4 sm:mt-12 w-full items-center">
-                <h3 className="font-bold mb-3 text-shadow-lg flex gap-2 italic tracking-wide">
+                <h6 className="font-bold mb-3 text-shadow-lg flex gap-2 italic tracking-wide">
                   Technologies I Work With
-                </h3>
+                </h6>
 
                 <div className="flex flex-col gap-4">
                   <ToggleGroup
