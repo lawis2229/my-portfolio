@@ -141,6 +141,7 @@ const Contact = () => {
               <h1 className="text-secondary-foreground font-semibold">
                 Send Message
               </h1>
+              <p className="text-red-500">This feature isn’t working yet!</p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
                 <div className="grid w-full items-center gap-3">
