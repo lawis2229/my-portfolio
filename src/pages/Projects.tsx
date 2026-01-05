@@ -36,7 +36,7 @@ const Projects = () => {
 
   return (
     <>
-      <h3 className="py-4 font-semibold">My Github Repository</h3>
+      <h4 className="py-4 font-bold">My Github Repository</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
         {repos.map((repo) => (
           <div className="flex flex-col gap-2" key={repo.id}>
