@@ -58,14 +58,9 @@ const cards = [
     description: `During the pandemic or coronavirus time, our teacher had a project to make a video and compose a song inspired by the pandemic. This song, entitled "Suriv or Reversed word of Virus"`,
   },
   {
-    title: "Riding Motorcycle",
-    src: "https://i.pinimg.com/originals/a8/28/c6/a828c60c48a3ae6b200615f0f198bbf7.gif",
-    video: "Facebook.mp4",
-  },
-  {
     title: "Coding",
     src: "/my_images/coding.gif",
-    video: "Facebook.mp4",
+    video: "/my_videos/PE-3_VideoPresentation1.mp4",
   },
 ];
 

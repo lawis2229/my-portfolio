@@ -92,9 +92,9 @@ const Home = () => {
               <h3 className="font-bold text-center text-3xl md:text-5xl mb-3 text-shadow-lg italic tracking-wide">
                 Hi, I'm Mark Laurence!
               </h3>
-              <div className="text-xl text-justify">
+              <div className="text-xl text-justify min-h-[5.5rem]">
                 <TextType
-                  className="text-shadow-[#033476] text-shadow-md"
+                  className="text-shadow-[#033476] text-shadow-md inline-block"
                   text={[
                     "Truly want to become a web developer.",
                     "Feel free to explore my portfolio to get to know me better.",
